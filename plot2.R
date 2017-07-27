@@ -30,3 +30,7 @@ str(household_power_consumption)
 
 ##Generating plot
 plot(household_power_consumption$DateTime,as.numeric(as.character(household_power_consumption$Global_active_power)),type="l", main="Global Active Power Vs Time", xlab="",ylab="Global Active Power (kilowatts)") 
+
+## Saving to file
+dev.copy(png, file="plot2.png", height=480, width=480)
+dev.off()
