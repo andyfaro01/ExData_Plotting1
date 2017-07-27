@@ -28,3 +28,8 @@ str(household_power_consumption)
 household_power_consumption$DateTime <- paste(household_power_consumption$Date, household_power_consumption$Time)
 household_power_consumption$DateTime <- strptime(household_power_consumption$DateTime, format = "%Y-%m-%d %H:%M:%S")
 str(household_power_consumption)
+
+##Generating plot
+##Generating plot
+hist(household_power_consumption$Global_active_power, main="Global Active Power", 
+     xlab="Global Active Power (kilowatts)", ylab="Frequency", col="Red")
