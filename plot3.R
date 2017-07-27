@@ -27,3 +27,15 @@ str(household_power_consumption)
 household_power_consumption$DateTime <- paste(household_power_consumption$Date, household_power_consumption$Time)
 household_power_consumption$DateTime <- strptime(household_power_consumption$DateTime, format = "%Y-%m-%d %H:%M:%S")
 str(household_power_consumption)
+
+##Generating plot 
+plot(household_power_consumption$DateTime,household_power_consumption$Sub_metering_1,type="n", xlab="",ylab="Energy sub metering") 
+with(household_power_consumption,lines(DateTime,Sub_metering_1))
+with(household_power_consumption,lines(DateTime,Sub_metering_2,col="red"))
+with(household_power_consumption,lines(DateTime,as.numeric(as.character(Sub_metering_3)),col="blue"))
+title(main="Energy sub-metering")
+legend(lty=1, col= c("black","red","blue"), legend =c ("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+
+## Saving to file
+dev.copy(png, file="plot3.png", height=480, width=480)
+dev.off()
