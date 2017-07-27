@@ -27,3 +27,6 @@ str(household_power_consumption)
 household_power_consumption$DateTime <- paste(household_power_consumption$Date, household_power_consumption$Time)
 household_power_consumption$DateTime <- strptime(household_power_consumption$DateTime, format = "%Y-%m-%d %H:%M:%S")
 str(household_power_consumption)
+
+##Generating plot
+plot(household_power_consumption$DateTime,as.numeric(as.character(household_power_consumption$Global_active_power)),type="l", main="Global Active Power Vs Time", xlab="",ylab="Global Active Power (kilowatts)") 
