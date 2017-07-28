@@ -42,3 +42,7 @@ with(household_power_consumption,{
   legend("topright", lty=1, col=c("black","red","blue"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"), cex = 0.6)})
 plot(household_power_consumption$DateTime,household_power_consumption$Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power")
 })
+
+## Saving to file
+dev.copy(png, file="plot4.png", height=480, width=480)
+dev.off()
